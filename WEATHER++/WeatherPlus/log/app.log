@@ -1,0 +1,586 @@
+2024-02-25 14:01:34,184 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 11243 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 14:01:34,186 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:01:34,400 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 14:01:34,441 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-02-25 14:01:34,626 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 14:01:34,655 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 14:01:34,657 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 14:01:34,809 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 14:01:34,822 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 14:01:34,888 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@718fd7c1
+2024-02-25 14:01:34,889 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 14:01:34,917 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 14:01:34,917 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 14:01:35,418 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 14:01:35,448 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:01:36,452 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 2.437 seconds (process running for 2.864)
+2024-02-25 14:01:38,643 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] update on
+2024-02-25 14:01:38,643 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] weather advanced received
+2024-02-25 14:01:46,436 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:01:46,437 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-02-25 14:01:46,439 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-02-25 14:03:03,922 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 11362 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 14:03:03,923 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:03:04,135 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 14:03:04,168 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
+2024-02-25 14:03:04,347 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 14:03:04,379 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 14:03:04,380 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 14:03:04,527 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 14:03:04,540 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 14:03:04,605 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4262fdeb
+2024-02-25 14:03:04,606 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 14:03:04,641 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 14:03:04,641 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 14:03:05,122 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 14:03:05,147 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:03:06,458 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 2.707 seconds (process running for 3.146)
+2024-02-25 14:03:07,426 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] update on
+2024-02-25 14:03:11,054 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] update on
+2024-02-25 14:03:11,262 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] is City
+2024-02-25 14:03:15,265 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:03:15,267 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-02-25 14:03:15,269 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-02-25 14:31:41,889 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-02-25 14:31:42,107 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 12155 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 14:31:42,107 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 14:31:42,316 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 14:31:42,351 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2024-02-25 14:31:42,530 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 14:31:42,557 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 14:31:42,559 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 14:31:42,704 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 14:31:42,717 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 14:31:42,793 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4262fdeb
+2024-02-25 14:31:42,794 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 14:31:42,821 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 14:31:42,822 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 14:31:43,286 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 14:31:43,310 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:31:43,408 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-02-25 14:31:43,408 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+2024-02-25 14:31:44,262 INFO c.w.W.c.BotInitializer [main] Went into the method init
+2024-02-25 14:31:44,433 INFO c.w.W.c.BotInitializer [main] Exited the method init
+2024-02-25 14:31:44,435 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 2.502 seconds (process running for 2.92)
+2024-02-25 14:31:44,437 INFO c.w.W.WeatherPlusApplication [main] Exited the method main
+2024-02-25 14:31:48,578 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 14:31:48,578 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method weatherAdvancedCommandReceive
+2024-02-25 14:31:48,578 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getWeather
+2024-02-25 14:31:48,579 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parse
+2024-02-25 14:31:48,579 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-02-25 14:31:48,612 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-02-25 14:31:48,612 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-02-25 14:31:49,966 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-02-25 14:31:49,967 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-02-25 14:31:50,750 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-02-25 14:31:50,753 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parse
+2024-02-25 14:31:50,759 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method getWeather
+2024-02-25 14:31:50,759 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-02-25 14:31:50,759 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 14:31:50,760 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 14:31:50,760 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-02-25 14:31:50,761 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-02-25 14:31:50,761 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 14:31:51,087 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 14:31:51,087 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-02-25 14:31:51,087 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method weatherAdvancedCommandReceive
+2024-02-25 14:31:51,087 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 14:31:54,359 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 14:31:54,360 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-02-25 14:31:54,362 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+
+2024-02-25 17:39:22,495 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-02-25 17:39:22,879 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 4425 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 17:39:22,881 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 17:39:23,264 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 17:39:23,320 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2024-02-25 17:39:23,638 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 17:39:23,718 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 17:39:23,720 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 17:39:24,009 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 17:39:24,035 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 17:39:24,153 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fc522d
+2024-02-25 17:39:24,155 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 17:39:24,210 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 17:39:24,211 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 17:39:25,030 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 17:39:25,078 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 17:39:25,282 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-02-25 17:39:25,283 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+2024-02-25 17:39:26,181 INFO c.w.W.c.BotInitializer [main] Went into the method init
+2024-02-25 17:39:26,181 INFO c.w.W.c.BotInitializer [main] Created TelegramBotsApi
+2024-02-25 17:39:26,182 INFO c.w.W.c.BotInitializer [main] Registered Bod
+2024-02-25 17:39:26,285 INFO c.w.W.c.BotInitializer [main] Exited the method init
+2024-02-25 17:39:26,286 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 3.706 seconds (process running for 4.505)
+2024-02-25 17:39:26,289 INFO c.w.W.WeatherPlusApplication [main] Exited the method main
+2024-02-25 17:39:46,328 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:39:46,328 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:39:46,328 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:39:46,328 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:39:46,328 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /change_city
+2024-02-25 17:39:46,328 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:39:46,328 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:39:46,329 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:39:46,329 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:39:46,659 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:39:46,659 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:39:52,393 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:39:52,393 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if (waitCity)
+2024-02-25 17:39:52,393 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:39:52,393 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chat (update.getMessage().getChat())
+2024-02-25 17:39:52,393 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:39:52,394 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:39:52,394 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:39:52,394 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:39:52,748 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:39:52,748 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Went into the method isCity
+2024-02-25 17:39:52,748 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] is City
+2024-02-25 17:39:52,748 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create OkHttpClient
+2024-02-25 17:39:52,763 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create Request
+2024-02-25 17:39:52,767 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Client sent a request
+2024-02-25 17:39:53,741 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] City found 
+2024-02-25 17:39:53,741 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Exited the method isCity
+2024-02-25 17:39:53,741 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Went into the method changeUserData
+2024-02-25 17:39:53,741 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Changed city of user 1426260059
+2024-02-25 17:39:53,820 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Saved changes for user 1426260059
+2024-02-25 17:39:53,820 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Exited the method changeUserData
+2024-02-25 17:39:53,820 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] waitCity = false is not catch
+2024-02-25 17:39:53,820 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /weather_advanced
+2024-02-25 17:39:58,146 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method weatherAdvancedCommandReceive
+2024-02-25 17:39:58,147 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getWeather
+2024-02-25 17:39:58,147 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parse
+2024-02-25 17:39:58,148 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-02-25 17:39:58,155 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] getCity returned city - Moscow
+2024-02-25 17:39:58,155 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-02-25 17:39:58,156 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-02-25 17:39:58,156 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created OKHttpClient
+2024-02-25 17:39:58,156 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created Request
+2024-02-25 17:39:58,156 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Client sent response to get coordinates
+2024-02-25 17:39:58,256 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lat 46.7323875
+2024-02-25 17:39:58,256 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lng -117.000165
+2024-02-25 17:39:58,256 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-02-25 17:39:58,257 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-02-25 17:39:58,257 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created StringBuffer
+2024-02-25 17:39:58,257 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URL
+2024-02-25 17:39:58,257 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URLConnection
+2024-02-25 17:39:58,272 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created BufferedReader(new InputStreamReader((urlConnection.getInputStream())))
+2024-02-25 17:39:59,226 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] All content received
+2024-02-25 17:39:59,226 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Closed bufferedReader
+2024-02-25 17:39:59,226 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-02-25 17:39:59,235 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] parse returned WEATHER IN Moscow,
+ Temperature: 3.97 C,
+ Feels like: -0.48 C,
+ Wind speed: 6.17 m/s,
+ Pressure: 1011.0 hPA,
+ Humidity: 80.0% ,
+ Min temperature: 1.92 C,
+ Max temperature: 5.6 C,
+ Precipitation: Clouds
+2024-02-25 17:39:59,235 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parse
+2024-02-25 17:39:59,236 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] getWeather returned string - WEATHER IN Moscow,
+ Temperature: 3.97 C,
+ Feels like: -0.48 C,
+ Wind speed: 6.17 m/s,
+ Pressure: 1011.0 hPA,
+ Humidity: 80.0% ,
+ Min temperature: 1.92 C,
+ Max temperature: 5.6 C,
+ Precipitation: Clouds
+2024-02-25 17:39:59,236 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method getWeather
+2024-02-25 17:39:59,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-02-25 17:39:59,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:39:59,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:39:59,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:39:59,236 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-02-25 17:39:59,237 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] keyboardMarkup.setKeyboard(keyboardRows)
+2024-02-25 17:39:59,237 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-02-25 17:39:59,237 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:39:59,356 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:39:59,357 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-02-25 17:39:59,357 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method weatherAdvancedCommandReceive
+2024-02-25 17:39:59,357 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:40:30,524 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 17:40:30,525 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-02-25 17:40:30,528 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-02-25 17:46:36,831 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-02-25 17:46:37,143 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 4788 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 17:46:37,144 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 17:46:37,495 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 17:46:37,543 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2024-02-25 17:46:37,844 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 17:46:37,884 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 17:46:37,886 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 17:46:38,107 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 17:46:38,127 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 17:46:38,223 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e046e39
+2024-02-25 17:46:38,225 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 17:46:38,268 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 17:46:38,269 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 17:46:38,986 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 17:46:39,023 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 17:46:39,186 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-02-25 17:46:39,186 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+
+
+2024-02-25 17:46:45,944 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-02-25 17:46:46,299 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 4890 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-02-25 17:46:46,300 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-02-25 17:46:46,666 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 17:46:46,713 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2024-02-25 17:46:47,007 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 17:46:47,051 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-25 17:46:47,053 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-02-25 17:46:47,281 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 17:46:47,302 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-02-25 17:46:47,416 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e046e39
+2024-02-25 17:46:47,418 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-02-25 17:46:47,463 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-25 17:46:47,464 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-25 17:46:48,161 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 17:46:48,198 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 17:46:48,344 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-02-25 17:46:48,345 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+2024-02-25 17:46:49,406 INFO c.w.W.c.BotInitializer [main] Went into the method init
+2024-02-25 17:46:49,406 INFO c.w.W.c.BotInitializer [main] Created TelegramBotsApi
+2024-02-25 17:46:49,406 INFO c.w.W.c.BotInitializer [main] Registered Bod
+2024-02-25 17:46:49,511 INFO c.w.W.c.BotInitializer [main] Exited the method init
+2024-02-25 17:46:49,513 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 3.501 seconds (process running for 4.166)
+2024-02-25 17:46:49,516 INFO c.w.W.WeatherPlusApplication [main] Exited the method main
+2024-02-25 17:47:00,009 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:00,009 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:47:00,009 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:47:00,009 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:00,009 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /change_city
+2024-02-25 17:47:00,009 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:00,009 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:00,010 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:00,010 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:00,322 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:00,323 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:03,189 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:03,189 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if (waitCity)
+2024-02-25 17:47:03,189 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:03,189 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chat (update.getMessage().getChat())
+2024-02-25 17:47:03,189 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:03,190 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:03,190 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:03,190 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:03,496 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:03,497 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Went into the method isCity
+2024-02-25 17:47:03,497 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] is City
+2024-02-25 17:47:03,497 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create OkHttpClient
+2024-02-25 17:47:03,502 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create Request
+2024-02-25 17:47:03,506 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Client sent a request
+2024-02-25 17:47:04,136 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] waitCity = false in catch
+2024-02-25 17:47:04,137 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:04,137 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:04,137 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:04,137 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:04,303 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:04,303 ERROR c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Error in check city: Index 0 out of bounds for length 0
+2024-02-25 17:47:04,303 ERROR o.t.t.u.DefaultBotSession [WeatherPlusPlusBot Telegram Executor] java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.weather.WeatherPlus.service.TelegramBot.onUpdateReceived(TelegramBot.java:194)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.google.gson.JsonArray.get(JsonArray.java:204)
+	at com.weather.WeatherPlus.checkers.CityNameChecker.isCity(CityNameChecker.java:50)
+	at com.weather.WeatherPlus.service.TelegramBot.onUpdateReceived(TelegramBot.java:182)
+	... 3 common frames omitted
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /weather_advanced
+2024-02-25 17:47:11,382 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method weatherAdvancedCommandReceive
+2024-02-25 17:47:11,383 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getWeather
+2024-02-25 17:47:11,383 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parse
+2024-02-25 17:47:11,384 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-02-25 17:47:11,437 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] getCity returned city - Moscow
+2024-02-25 17:47:11,437 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-02-25 17:47:11,437 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-02-25 17:47:11,437 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created OKHttpClient
+2024-02-25 17:47:11,437 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created Request
+2024-02-25 17:47:11,438 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Client sent response to get coordinates
+2024-02-25 17:47:11,539 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lat 46.7323875
+2024-02-25 17:47:11,539 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lng -117.000165
+2024-02-25 17:47:11,539 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-02-25 17:47:11,540 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-02-25 17:47:11,540 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created StringBuffer
+2024-02-25 17:47:11,540 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URL
+2024-02-25 17:47:11,540 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URLConnection
+2024-02-25 17:47:11,545 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created BufferedReader(new InputStreamReader((urlConnection.getInputStream())))
+2024-02-25 17:47:12,057 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] All content received
+2024-02-25 17:47:12,058 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Closed bufferedReader
+2024-02-25 17:47:12,058 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-02-25 17:47:12,066 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] parse returned WEATHER IN Moscow,
+ Temperature: 3.97 C,
+ Feels like: -0.48 C,
+ Wind speed: 6.17 m/s,
+ Pressure: 1011.0 hPA,
+ Humidity: 80.0% ,
+ Min temperature: 1.92 C,
+ Max temperature: 5.6 C,
+ Precipitation: Clouds
+2024-02-25 17:47:12,066 INFO c.w.W.p.ParserAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parse
+2024-02-25 17:47:12,066 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] getWeather returned string - WEATHER IN Moscow,
+ Temperature: 3.97 C,
+ Feels like: -0.48 C,
+ Wind speed: 6.17 m/s,
+ Pressure: 1011.0 hPA,
+ Humidity: 80.0% ,
+ Min temperature: 1.92 C,
+ Max temperature: 5.6 C,
+ Precipitation: Clouds
+2024-02-25 17:47:12,066 INFO c.w.W.g.GetterAdvancedWeather [WeatherPlusPlusBot Telegram Executor] Exited the method getWeather
+2024-02-25 17:47:12,066 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-02-25 17:47:12,066 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:12,066 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:12,066 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:12,067 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-02-25 17:47:12,068 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] keyboardMarkup.setKeyboard(keyboardRows)
+2024-02-25 17:47:12,068 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-02-25 17:47:12,068 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:12,194 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:12,194 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-02-25 17:47:12,194 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method weatherAdvancedCommandReceive
+2024-02-25 17:47:12,194 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /change_city
+2024-02-25 17:47:17,174 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:17,174 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:17,174 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:17,174 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:17,295 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:17,296 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:22,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:22,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if (waitCity)
+2024-02-25 17:47:22,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:22,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chat (update.getMessage().getChat())
+2024-02-25 17:47:22,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:22,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:22,236 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:22,236 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:22,347 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:22,348 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Went into the method isCity
+2024-02-25 17:47:22,348 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] is City
+2024-02-25 17:47:22,348 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create OkHttpClient
+2024-02-25 17:47:22,348 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Create Request
+2024-02-25 17:47:22,348 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Client sent a request
+2024-02-25 17:47:22,444 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] City found 
+2024-02-25 17:47:22,445 INFO c.w.W.c.CityNameChecker [WeatherPlusPlusBot Telegram Executor] Exited the method isCity
+2024-02-25 17:47:22,445 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Went into the method changeUserData
+2024-02-25 17:47:22,445 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Changed city of user 1426260059
+2024-02-25 17:47:22,487 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Saved changes for user 1426260059
+2024-02-25 17:47:22,487 INFO c.w.W.C.ChangerUserData [WeatherPlusPlusBot Telegram Executor] Exited the method changeUserData
+2024-02-25 17:47:22,487 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] waitCity = false is not catch
+2024-02-25 17:47:22,487 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /recommendation_of_clothes
+2024-02-25 17:47:25,844 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method recommendationCommandReceive
+2024-02-25 17:47:25,844 INFO c.w.W.g.GetterRecommendationWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getRecommendation
+2024-02-25 17:47:25,845 INFO c.w.W.p.ParserRecommendationWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parseRecommendationInfo
+2024-02-25 17:47:25,845 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] getCity returned city - Novokuznetsk
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created OKHttpClient
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created Request
+2024-02-25 17:47:25,848 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Client sent response to get coordinates
+2024-02-25 17:47:26,025 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lat 53.7575903
+2024-02-25 17:47:26,025 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lng 87.1358494
+2024-02-25 17:47:26,025 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-02-25 17:47:26,025 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-02-25 17:47:26,025 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created StringBuffer
+2024-02-25 17:47:26,025 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URL
+2024-02-25 17:47:26,025 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URLConnection
+2024-02-25 17:47:26,025 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created BufferedReader(new InputStreamReader((urlConnection.getInputStream())))
+2024-02-25 17:47:26,638 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] All content received
+2024-02-25 17:47:26,639 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Closed bufferedReader
+2024-02-25 17:47:26,639 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-02-25 17:47:26,639 INFO c.w.W.p.ParserRecommendationWeather [WeatherPlusPlusBot Telegram Executor] parseRecommendationInfo returned com.weather.WeatherPlus.parsers.ParserRecommendationWeather$RecommendationInfoDto@4c352a22
+2024-02-25 17:47:26,639 INFO c.w.W.p.ParserRecommendationWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parseRecommendationInfo
+2024-02-25 17:47:26,683 INFO c.w.W.g.GetterRecommendationWeather [WeatherPlusPlusBot Telegram Executor] getRecommendation returned ⛄ It feels cold outside, so you need to dress warmly! Today you should wear a sweater and warm pants, and a down jacket on top.
+2024-02-25 17:47:26,683 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-02-25 17:47:26,683 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:26,683 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:26,683 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:26,684 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-02-25 17:47:26,684 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] keyboardMarkup.setKeyboard(keyboardRows)
+2024-02-25 17:47:26,684 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-02-25 17:47:26,684 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:26,853 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:26,853 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-02-25 17:47:26,853 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method recommendationCommandReceive
+2024-02-25 17:47:26,853 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /weather_base
+2024-02-25 17:47:28,175 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method weatherBaseCommandReceive
+2024-02-25 17:47:28,175 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getWeather
+2024-02-25 17:47:28,176 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parse
+2024-02-25 17:47:28,176 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-02-25 17:47:28,179 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] getCity returned city - Novokuznetsk
+2024-02-25 17:47:28,179 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-02-25 17:47:28,180 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-02-25 17:47:28,180 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created OKHttpClient
+2024-02-25 17:47:28,180 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created Request
+2024-02-25 17:47:28,180 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Client sent response to get coordinates
+2024-02-25 17:47:28,278 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lat 53.7575903
+2024-02-25 17:47:28,279 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lng 87.1358494
+2024-02-25 17:47:28,279 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-02-25 17:47:28,279 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-02-25 17:47:28,279 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created StringBuffer
+2024-02-25 17:47:28,279 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URL
+2024-02-25 17:47:28,279 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URLConnection
+2024-02-25 17:47:28,280 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created BufferedReader(new InputStreamReader((urlConnection.getInputStream())))
+2024-02-25 17:47:28,481 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] All content received
+2024-02-25 17:47:28,481 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Closed bufferedReader
+2024-02-25 17:47:28,481 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-02-25 17:47:28,484 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] parse returned WEATHER IN Новокузнецк,
+ Temperature: -10.4 C,
+ Wind speed: 2.75 m/s,
+ Pressure: 1038.0 hPA
+2024-02-25 17:47:28,484 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parse
+2024-02-25 17:47:28,484 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] getWeather returned string - WEATHER IN Новокузнецк,
+ Temperature: -10.4 C,
+ Wind speed: 2.75 m/s,
+ Pressure: 1038.0 hPA
+2024-02-25 17:47:28,484 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] Exited the method getWeather
+2024-02-25 17:47:28,484 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-02-25 17:47:28,484 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-02-25 17:47:28,484 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-02-25 17:47:28,484 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-02-25 17:47:28,484 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-02-25 17:47:28,484 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] keyboardMarkup.setKeyboard(keyboardRows)
+2024-02-25 17:47:28,484 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-02-25 17:47:28,484 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-02-25 17:47:29,405 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-02-25 17:47:29,405 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-02-25 17:47:29,405 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method weatherBaseCommandReceive
+2024-02-25 17:47:29,405 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-02-25 17:47:39,918 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 17:47:39,919 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-02-25 17:47:39,922 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-05 16:37:48,139 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-03-05 16:37:48,391 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 4883 (/home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-03-05 16:37:48,392 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-05 16:37:48,658 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-05 16:37:48,701 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-03-05 16:37:48,922 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-05 16:37:48,964 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-03-05 16:37:48,966 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-03-05 16:37:49,156 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-05 16:37:49,173 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-05 16:37:49,254 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c719bd4
+2024-03-05 16:37:49,255 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-05 16:37:49,289 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-05 16:37:49,290 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-05 16:37:49,911 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-05 16:37:49,950 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-05 16:37:50,162 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-03-05 16:37:50,162 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+2024-03-05 16:37:51,051 INFO c.w.W.c.BotInitializer [main] Went into the method init
+2024-03-05 16:37:51,051 INFO c.w.W.c.BotInitializer [main] Created TelegramBotsApi
+2024-03-05 16:37:51,052 INFO c.w.W.c.BotInitializer [main] Registered Bod
+2024-03-05 16:37:51,164 INFO c.w.W.c.BotInitializer [main] Exited the method init
+2024-03-05 16:37:51,165 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 2.962 seconds (process running for 3.623)
+2024-03-05 16:37:51,167 INFO c.w.W.WeatherPlusApplication [main] Exited the method main
+2024-03-05 16:46:16,863 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-05 16:46:16,864 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-05 16:46:16,866 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-03-05 16:47:59,065 INFO c.w.W.WeatherPlusApplication [main] Went into the method main
+2024-03-05 16:47:59,273 INFO c.w.W.WeatherPlusApplication [main] Starting WeatherPlusApplication using Java 21.0.1 with PID 6382 (/home/saveliy/IdeaProjects/TG_BOTS/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus/target/classes started by saveliy in /home/saveliy/IdeaProjects/TG_BOTS/WEATHER/TG_BOTS/papka/WEATHER++/WeatherPlus)
+2024-03-05 16:47:59,274 INFO c.w.W.WeatherPlusApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-03-05 16:47:59,484 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-05 16:47:59,519 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2024-03-05 16:47:59,707 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-05 16:47:59,734 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-03-05 16:47:59,735 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-03-05 16:47:59,874 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-05 16:47:59,888 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-03-05 16:47:59,958 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46fc522d
+2024-03-05 16:47:59,959 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-03-05 16:47:59,986 WARN o.h.o.deprecation [main] HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-05 16:47:59,986 WARN o.h.o.deprecation [main] HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-03-05 16:48:00,452 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-05 16:48:00,482 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-05 16:48:00,576 INFO c.w.W.T.MakerMenu [main] Went into the method makeMenu
+2024-03-05 16:48:00,577 INFO c.w.W.T.MakerMenu [main] Exited the method makeMenu
+2024-03-05 16:48:01,458 INFO c.w.W.c.BotInitializer [main] Went into the method init
+2024-03-05 16:48:01,458 INFO c.w.W.c.BotInitializer [main] Created TelegramBotsApi
+2024-03-05 16:48:01,458 INFO c.w.W.c.BotInitializer [main] Registered Bod
+2024-03-05 16:48:01,654 INFO c.w.W.c.BotInitializer [main] Exited the method init
+2024-03-05 16:48:01,656 INFO c.w.W.WeatherPlusApplication [main] Started WeatherPlusApplication in 2.55 seconds (process running for 3.095)
+2024-03-05 16:48:01,658 INFO c.w.W.WeatherPlusApplication [main] Exited the method main
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method onUpdateReceived
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] if !waitCity
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received text (update.getMessage().getText())
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Received chatId (update.getMessage().getChatId())
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] messageText equals /weather_base
+2024-03-05 16:48:13,485 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method weatherBaseCommandReceive
+2024-03-05 16:48:13,486 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] Went into the method getWeather
+2024-03-05 16:48:13,486 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] Went into the method parse
+2024-03-05 16:48:13,486 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Went into the method getCity
+2024-03-05 16:48:13,534 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] getCity returned city - Novokuznetsk
+2024-03-05 16:48:13,534 INFO c.w.W.g.GetterCityFromBD [WeatherPlusPlusBot Telegram Executor] Exited the method getCity
+2024-03-05 16:48:13,534 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Went into the method getCoordinates
+2024-03-05 16:48:13,535 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created OKHttpClient
+2024-03-05 16:48:13,539 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Created Request
+2024-03-05 16:48:13,541 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Client sent response to get coordinates
+2024-03-05 16:48:14,569 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lat 53.7575903
+2024-03-05 16:48:14,570 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] lng 87.1358494
+2024-03-05 16:48:14,570 INFO c.w.W.g.GetterCoordinates [WeatherPlusPlusBot Telegram Executor] Exited the method getCoordinates
+2024-03-05 16:48:14,570 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Went into the method getUrlContent
+2024-03-05 16:48:14,571 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created StringBuffer
+2024-03-05 16:48:14,571 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URL
+2024-03-05 16:48:14,571 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created URLConnection
+2024-03-05 16:48:14,577 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Created BufferedReader(new InputStreamReader((urlConnection.getInputStream())))
+2024-03-05 16:48:15,271 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] All content received
+2024-03-05 16:48:15,271 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Closed bufferedReader
+2024-03-05 16:48:15,271 INFO c.w.W.n.HttpClient [WeatherPlusPlusBot Telegram Executor] Exited the method getUrlContent
+2024-03-05 16:48:15,277 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] parse returned WEATHER IN Новокузнецк,
+ Temperature: -2.62 C,
+ Wind speed: 4.54 m/s,
+ Pressure: 1028.0 hPA
+2024-03-05 16:48:15,277 INFO c.w.W.p.ParserBaseWeather [WeatherPlusPlusBot Telegram Executor] Exited the method parse
+2024-03-05 16:48:15,277 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] getWeather returned string - WEATHER IN Новокузнецк,
+ Temperature: -2.62 C,
+ Wind speed: 4.54 m/s,
+ Pressure: 1028.0 hPA
+2024-03-05 16:48:15,277 INFO c.w.W.g.GetterBaseWeather [WeatherPlusPlusBot Telegram Executor] Exited the method getWeather
+2024-03-05 16:48:15,277 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method sendMessage
+2024-03-05 16:48:15,277 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Went into the method createMessage(chat, textToSend)
+2024-03-05 16:48:15,277 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Create SendMessage
+2024-03-05 16:48:15,277 INFO c.w.W.C.CreaterMessage [WeatherPlusPlusBot Telegram Executor] Exited the method createMessage(chat, textToSend)
+2024-03-05 16:48:15,277 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Went into the method makeKeybord
+2024-03-05 16:48:15,278 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] keyboardMarkup.setKeyboard(keyboardRows)
+2024-03-05 16:48:15,278 INFO c.w.W.T.MakerKeybord [WeatherPlusPlusBot Telegram Executor] Exited the method makeKeybord
+2024-03-05 16:48:15,278 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Went into the method doExecute(SendMessage message)
+2024-03-05 16:48:15,483 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method doExecute(SendMessage message)
+2024-03-05 16:48:15,483 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method sendMessage
+2024-03-05 16:48:15,483 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method weatherBaseCommandReceive
+2024-03-05 16:48:15,483 INFO c.w.W.s.TelegramBot [WeatherPlusPlusBot Telegram Executor] Exited the method onUpdateReceived
+2024-03-05 16:48:19,061 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-05 16:48:19,062 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-03-05 16:48:19,065 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
