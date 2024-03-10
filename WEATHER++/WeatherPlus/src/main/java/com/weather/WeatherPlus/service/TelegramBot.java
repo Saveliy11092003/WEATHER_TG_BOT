@@ -28,9 +28,11 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,6 +47,10 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     CreaterMessage createrMessage;
 
+    private final ReplyKeyboardMarkup menuKeyboard;
+    private final ReplyKeyboardMarkup weatherKeyboard;
+    private final ReplyKeyboardMarkup settingsKeyboard;
+
     public TelegramBot(BotConfig config) {
 
         this.config = config;
@@ -53,11 +59,24 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         MakerMenu makerMenu = new MakerMenu();
         List<BotCommand> listOfCommands = makerMenu.makeMenu();
+
         try {
             this.execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         } catch (TelegramApiException e) {
             log.error("Error setting bot's command list: " + e.getMessage());
         }
+
+        MakerKeyboard makerKeyboard = new MakerKeyboardMenu();
+        menuKeyboard = makerKeyboard.makeKeyboard();
+        log.info("Create MakerKeyboardMenu");
+
+        makerKeyboard = new MakerKeyboardWeather();
+        weatherKeyboard = makerKeyboard.makeKeyboard();
+        log.info("Create MakerKeyboardWeather");
+
+        makerKeyboard = new MakerKeyboardSettings();
+        settingsKeyboard = makerKeyboard.makeKeyboard();
+        log.info("Create MakerKeyboardSettings");
 
         createrMessage = new CreaterMessage();
     }
@@ -96,73 +115,100 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
-                case "Help":
-                case "/help": {
-                    log.info("messageText equals /help");
-                    sendMessage(chatId, HELP_TEXT);
+                case "Help": {
+                    log.info("case HELP");
+                    sendMessage(chatId, HELP_TEXT, menuKeyboard);
                     break;
                 }
 
-                case "Base weather":
-                case "/weather_base": {
-                    log.info("messageText equals /weather_base");
+                case "Base weather": {
+                    log.info("case BASE WEATHER");
                     try {
                         weatherBaseCommandReceive(chatId, storeUnits, userRepository);
                     } catch (IOException e) {
-                        log.error("Error in case /weather_base:" + e.getMessage());
+                        log.error("Error in case weather_base:" + e.getMessage());
                         throw new RuntimeException(e);
                     }
                     break;
                 }
 
-                case "Advanced weather":
-                case "/weather_advanced": {
-                    log.info("messageText equals /weather_advanced");
+                case "Advanced weather": {
+                    log.info("case ADVANCED WEATHER");
                     try {
                         weatherAdvancedCommandReceive(chatId, storeUnits, userRepository);
                     } catch (IOException e) {
-                        log.error("Error in case /weather_advanced:" + e.getMessage());
+                        log.error("Error in case weather_advanced:" + e.getMessage());
                         throw new RuntimeException(e);
                     }
                     break;
                 }
 
-                case "Change city":
-                case "/change_city": {
-                    log.info("messageText equals /change_city");
+                case "Weather": {
+                    log.info("case WEATHER");
+                    try {
+                        weatherCommandReceive(chatId);
+                    } catch (IOException e) {
+                        log.error("Error in case weather:" + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+
+                case "Settings": {
+                    log.info("case WEATHER");
+                    try {
+                        settingsCommandReceive(chatId);
+                    } catch (IOException e) {
+                        log.error("Error in case settings:" + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+
+                case "Back": {
+                    log.info("case BACK");
+                    try {
+                        backCommandReceive(chatId);
+                    } catch (IOException e) {
+                        log.error("Error in case back:" + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+
+                case "Change city": {
+                    log.info("case CHANGE CITY");
                     SendMessage message = createrMessage.createMessage(chatId, "Enter the city: ");
                     doExecute(message);
                     waitCity = true;
                     break;
                 }
 
-                case "Change units":
-                case "/change_utils": {
-                    log.info("messageText equals /change_utils");
+                case "Change units": {
+                    log.info("case CHANGE UNITS");
                     try {
                         changeTempCommandReceive(chatId);
                     } catch (IOException e) {
-                        log.error("Error in case /change_utils:" + e.getMessage());
+                        log.error("Error in case change_utils:" + e.getMessage());
                         throw new RuntimeException(e);
                     }
                     break;
                 }
 
-                case "Cloth recommendations":
-                case "/recommendation_of_clothes": {
-                    log.info("messageText equals /recommendation_of_clothes");
+                case "Cloth recommendations": {
+                    log.info("case CLOTH RECOMMENDATION");
                     try {
                         recommendationCommandReceive(userRepository, chatId, storeUnits);
                     } catch (IOException e) {
-                        log.error("Error in case /weather_base:" + e.getMessage());
+                        log.error("Error in case cloth recommendation:" + e.getMessage());
                         throw new RuntimeException(e);
                     }
                     break;
                 }
 
                 default: {
-                    log.info("messageText is not any command");
-                    sendMessage(chatId, "Sorry, command was not recognized");
+                    log.info("COMMAND NOT FOUND");
+                    sendMessage(chatId, "Sorry, command was not recognized", menuKeyboard);
                 }
 
             }
@@ -276,7 +322,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Went into the method recommendationCommandReceive");
         GetterRecommendationWeather getterRecommendation = new GetterRecommendationWeather(userRepository, chatId, storeUnits);
         String answer = getterRecommendation.getRecommendation();
-        sendMessage(chatId, answer);
+        sendMessage(chatId, answer, menuKeyboard);
         log.info("Exited the method recommendationCommandReceive");
     }
 
@@ -284,15 +330,36 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Went into the method startCommandReceive");
         StartCommand startCommand = new StartCommand();
         String answer = startCommand.getStartCommandReceive(firstName);
-        sendMessage(chatId, answer);
+        sendMessage(chatId, answer, menuKeyboard);
         log.info("Exited the method startCommandReceive");
+    }
+
+    private void weatherCommandReceive(long chatId) throws IOException{
+        log.info("Went into the method weatherCommandReceive");
+        String answer = "Weather";
+        sendMessage(chatId, answer, weatherKeyboard);
+        log.info("Exited the method weatherCommandReceive");
+    }
+
+    private void settingsCommandReceive(long chatId) throws IOException{
+        log.info("Went into the method settingsCommandReceive");
+        String answer = "Settings";
+        sendMessage(chatId, answer, settingsKeyboard);
+        log.info("Exited the method settingsCommandReceive");
+    }
+
+    private void backCommandReceive(long chatId) throws IOException{
+        log.info("Went into the method backCommandReceive");
+        String answer = "Back";
+        sendMessage(chatId, answer, menuKeyboard);
+        log.info("Exited the method backCommandReceive");
     }
 
     private void weatherBaseCommandReceive(long chatId, StoreUnits storeUnits, UserRepository userRepository) throws IOException {
         log.info("Went into the method weatherBaseCommandReceive");
         GetterBaseWeather getterWeather = new GetterBaseWeather(storeUnits, userRepository, chatId);
         String answer = getterWeather.getWeather();
-        sendMessage(chatId, answer);
+        sendMessage(chatId, answer, weatherKeyboard);
         log.info("Exited the method weatherBaseCommandReceive");
     }
 
@@ -300,9 +367,10 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Went into the method weatherAdvancedCommandReceive");
         GetterAdvancedWeather getterWeather = new GetterAdvancedWeather(storeUnits, userRepository, chatId);
         String answer = getterWeather.getWeather();
-        sendMessage(chatId, answer);
+        sendMessage(chatId, answer, weatherKeyboard);
         log.info("Exited the method weatherAdvancedCommandReceive");
     }
+
 
     private void changeTempCommandReceive(long chatId) throws IOException {
         log.info("Went into the method changeTempCommandReceive");
@@ -328,11 +396,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Exited the method changePressureCommandReceive");
     }
 
-    public void sendMessage(long chatId, String textToSend) {
+    public void sendMessage(long chatId, String textToSend, ReplyKeyboardMarkup keyboardMarkup) {
         log.info("Went into the method sendMessage");
         SendMessage message = createrMessage.createMessage(chatId, textToSend);
-        MakerKeybord makerKeybord = new MakerKeybord();
-        ReplyKeyboardMarkup keyboardMarkup = makerKeybord.makeKeybord();
         message.setReplyMarkup(keyboardMarkup);
         doExecute(message);
         log.info("Exited the method sendMessage");

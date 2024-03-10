@@ -7,32 +7,37 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+ *
+ *Class creates Weather Menu
+ *
+ */
+
 @Slf4j
-public class MakerKeybord {
-    public ReplyKeyboardMarkup makeKeybord(){
-        log.info("Went into the method makeKeybord");
+public class MakerKeyboardWeather implements MakerKeyboard{
+    @Override
+    public ReplyKeyboardMarkup makeKeyboard() {
+        log.info("Went into the method makeKeyboard in MakerKeyboardWeather");
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
 
         List<KeyboardRow> keyboardRows = new ArrayList<>();
 
         KeyboardRow row1 = new KeyboardRow();
-        KeyboardRow row2 = new KeyboardRow();
 
-        row1.add("Help");
+
         row1.add("Base weather");
         row1.add("Advanced weather");
-        row2.add("Cloth recommendations");
-        row2.add("Change units");
-        row2.add("Change city");
+        row1.add("Back");
 
 
         keyboardRows.add(row1);
-        keyboardRows.add(row2);
 
 
         keyboardMarkup.setKeyboard(keyboardRows);
+
         log.info("keyboardMarkup.setKeyboard(keyboardRows)");
-        log.info("Exited the method makeKeybord");
+        log.info("Exited the method makerKeyboard in MakerKeyboardWeather");
         return keyboardMarkup;
     }
 }

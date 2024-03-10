@@ -17,6 +17,7 @@ public class MakerMenu {
         listOfCommands.add(new BotCommand("/weather_advanced", "get a advanced weather"));
         listOfCommands.add(new BotCommand("/recommendation_of_clothes", "recomendation of clothers"));
         listOfCommands.add(new BotCommand("/change_utils", "change utils"));
+        listOfCommands.add(new BotCommand("/next", "next"));
         listOfCommands.add(new BotCommand("/help", "info how to use this bot"));
 
         log.info("Exited the method makeMenu");
