@@ -9,6 +9,9 @@ import com.weather.WeatherPlus.config.BotConfig;
 import com.weather.WeatherPlus.getters.GetterAdvancedWeather;
 import com.weather.WeatherPlus.getters.GetterBaseWeather;
 import com.weather.WeatherPlus.getters.GetterRecommendationWeather;
+import com.weather.WeatherPlus.language.Translator;
+import com.weather.WeatherPlus.language.TranslatorEn;
+import com.weather.WeatherPlus.language.TranslatorRu;
 import com.weather.WeatherPlus.model.UserRepository;
 import com.weather.WeatherPlus.units.PRESSURE;
 import com.weather.WeatherPlus.units.StoreUnits;
@@ -28,13 +31,10 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 @Slf4j
 @Component
@@ -44,12 +44,13 @@ public class TelegramBot extends TelegramLongPollingBot {
     private boolean waitCity;
     final BotConfig config;
     StoreUnits storeUnits;
+    private Translator translator;
 
     CreaterMessage createrMessage;
 
-    private final ReplyKeyboardMarkup menuKeyboard;
-    private final ReplyKeyboardMarkup weatherKeyboard;
-    private final ReplyKeyboardMarkup settingsKeyboard;
+    private ReplyKeyboardMarkup menuKeyboard;
+    private ReplyKeyboardMarkup weatherKeyboard;
+    private ReplyKeyboardMarkup settingsKeyboard;
 
     public TelegramBot(BotConfig config) {
 
@@ -66,19 +67,25 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.error("Error setting bot's command list: " + e.getMessage());
         }
 
-        MakerKeyboard makerKeyboard = new MakerKeyboardMenu();
+        translator = new TranslatorRu();
+
+        setLanguage();
+
+        createrMessage = new CreaterMessage();
+    }
+
+    void setLanguage() {
+        MakerKeyboard makerKeyboard = new MakerKeyboardMenu(translator);
         menuKeyboard = makerKeyboard.makeKeyboard();
         log.info("Create MakerKeyboardMenu");
 
-        makerKeyboard = new MakerKeyboardWeather();
+        makerKeyboard = new MakerKeyboardWeather(translator);
         weatherKeyboard = makerKeyboard.makeKeyboard();
         log.info("Create MakerKeyboardWeather");
 
-        makerKeyboard = new MakerKeyboardSettings();
+        makerKeyboard = new MakerKeyboardSettings(translator);
         settingsKeyboard = makerKeyboard.makeKeyboard();
         log.info("Create MakerKeyboardSettings");
-
-        createrMessage = new CreaterMessage();
     }
 
     @Override
@@ -101,6 +108,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.info("Received chatId (update.getMessage().getChatId())");
             long chatId = update.getMessage().getChatId();
 
+
             switch (messageText) {
                 case "/start": {
 
@@ -115,12 +123,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Помощь" :
                 case "Help": {
                     log.info("case HELP");
+                    translator = new TranslatorEn();
                     sendMessage(chatId, HELP_TEXT, menuKeyboard);
                     break;
                 }
 
+                case "Стандартная погода" :
                 case "Base weather": {
                     log.info("case BASE WEATHER");
                     try {
@@ -132,6 +143,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Расширенная погода" :
                 case "Advanced weather": {
                     log.info("case ADVANCED WEATHER");
                     try {
@@ -143,6 +155,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Погода" :
                 case "Weather": {
                     log.info("case WEATHER");
                     try {
@@ -154,6 +167,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Настройки" :
                 case "Settings": {
                     log.info("case WEATHER");
                     try {
@@ -165,6 +179,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Назад" :
                 case "Back": {
                     log.info("case BACK");
                     try {
@@ -176,6 +191,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Изменить город" :
                 case "Change city": {
                     log.info("case CHANGE CITY");
                     SendMessage message = createrMessage.createMessage(chatId, "Enter the city: ");
@@ -184,6 +200,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Изменить единицы измерения" :
                 case "Change units": {
                     log.info("case CHANGE UNITS");
                     try {
@@ -195,12 +212,25 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
                 }
 
+                case "Рекомендация одежды" :
                 case "Cloth recommendations": {
                     log.info("case CLOTH RECOMMENDATION");
                     try {
                         recommendationCommandReceive(userRepository, chatId, storeUnits);
                     } catch (IOException e) {
                         log.error("Error in case cloth recommendation:" + e.getMessage());
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+
+                case "Русский Английский" :
+                case "RU EN": {
+                    log.info("case change language");
+                    try {
+                        changeLanguageReceive(chatId, translator);
+                    } catch (IOException e) {
+                        log.error("Error in case change language :" + e.getMessage());
                         throw new RuntimeException(e);
                     }
                     break;
@@ -316,6 +346,24 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
         }
         log.info("Exited the method onUpdateReceived");
+    }
+
+    private void changeLanguageReceive(long chatId, Translator translator) throws IOException{
+        log.info("Went into the method changeLanguageReceive");
+
+        String answer;
+        if(translator instanceof TranslatorEn) {
+            translator = new TranslatorRu();
+            answer = translator.translate("Language is Russian");
+        } else {
+            translator = new TranslatorEn();
+            answer = translator.translate("Language is English");
+        }
+
+        setLanguage();
+        sendMessage(chatId, answer, menuKeyboard);
+
+        log.info("Exited the method changeLanguageReceive");
     }
 
     private void recommendationCommandReceive(UserRepository userRepository, Long chatId, StoreUnits storeUnits) throws IOException {

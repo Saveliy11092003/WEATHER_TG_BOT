@@ -1,5 +1,8 @@
 package com.weather.WeatherPlus.TgInterfaceParts;
 
+import com.weather.WeatherPlus.language.Translator;
+import com.weather.WeatherPlus.language.TranslatorEn;
+import com.weather.WeatherPlus.language.TranslatorRu;
 import lombok.extern.slf4j.Slf4j;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
@@ -15,6 +18,15 @@ import java.util.List;
 
 @Slf4j
 public class MakerKeyboardMenu implements MakerKeyboard{
+
+
+    private Translator translator;
+
+    public MakerKeyboardMenu(Translator translator) {
+        this.translator = translator;
+    }
+
+
     public ReplyKeyboardMarkup makeKeyboard(){
         log.info("Went into the method makeKeyboard in MakerKeyboardMenu");
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
@@ -24,10 +36,11 @@ public class MakerKeyboardMenu implements MakerKeyboard{
         KeyboardRow row1 = new KeyboardRow();
         KeyboardRow row2 = new KeyboardRow();
 
-        row1.add("Help");
-        row1.add("Weather");
-        row2.add("Settings");
-        row2.add("Cloth recommendations");
+
+        row1.add(translator.translate("Help"));
+        row1.add(translator.translate("Weather"));
+        row2.add(translator.translate("Settings"));
+        row2.add(translator.translate("Cloth recommendations"));
 
         keyboardRows.add(row1);
         keyboardRows.add(row2);
