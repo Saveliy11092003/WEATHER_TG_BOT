@@ -35,7 +35,7 @@ public class MakerKeyboardSettings implements MakerKeyboard{
 
         row1.add(translator.translate("Change units"));
         row1.add(translator.translate("Change city"));
-        row2.add(translator.translate("EN/RU"));
+        row2.add(translator.translate("RU EN"));
         row2.add(translator.translate("Back"));
 
 

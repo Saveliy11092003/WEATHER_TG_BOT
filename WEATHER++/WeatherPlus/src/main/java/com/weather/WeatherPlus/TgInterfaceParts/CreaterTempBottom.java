@@ -8,11 +8,20 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 
 @Slf4j
 public class CreaterTempBottom {
-    public SendMessage createTemp(Long chatId){
+    public SendMessage createTemp(Long chatId, boolean isRus){
         log.info("Went into the method createTemp");
         CreaterMessage createrMessge = new CreaterMessage();
         log.info("Created SendMessage");
-        SendMessage message = createrMessge.createMessage(chatId, "Select util of temperature:");
+
+        String answer;
+
+        if (isRus) {
+            answer = "Выберите единицы измерения температуры";
+        } else {
+            answer = "Select util of temperature:";
+        }
+
+        SendMessage message = createrMessge.createMessage(chatId, answer);
 
         MakeInlineKeyboardMarkup maker = new MakeInlineKeyboardMarkup();
         log.info("Created InlineKeyboardMarkup");

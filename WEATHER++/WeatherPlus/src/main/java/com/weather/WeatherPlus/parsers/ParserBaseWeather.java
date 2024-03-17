@@ -20,7 +20,7 @@ import static java.lang.Math.round;
 @Slf4j
 public class ParserBaseWeather {
 
-    public String parse(StoreUnits storeUnits, UserRepository userRepository, Long chatId) throws IOException {
+    public String parse(StoreUnits storeUnits, UserRepository userRepository, Long chatId, boolean isRus) throws IOException {
         log.info("Went into the method parse");
 
         String city = null;
@@ -39,6 +39,7 @@ public class ParserBaseWeather {
 
         String output = HttpClient.getUrlContent("https://api.openweathermap.org/data/2.5/weather?lat=" + coordinates.getLat() + "&lon=" + coordinates.getLng() + "&appid=" + API_KEY2 + "&units=metric");
 
+        System.out.println(output);
         JSONObject jsonObject = new JSONObject(output);
         double temperature = jsonObject.getJSONObject("main").getDouble("temp");
         double windSpeed = jsonObject.getJSONObject("wind").getDouble("speed");
@@ -68,10 +69,20 @@ public class ParserBaseWeather {
             press = pressure;
         }
 
-        String message = "WEATHER IN " + coordinates.getCityName() +
-                ",\n Temperature: " + temp + " " + storeUnits.getTemperature() +
-                ",\n Wind speed: " + wind + " " + storeUnits.getWindSpeed() +
-                ",\n Pressure: " + press + " " + storeUnits.getPressure();
+        String message;
+
+        if(isRus) {
+            message = "Погода в " + coordinates.getCityName() +
+                    ",\n Температура: " + temp + " " + storeUnits.getTemperature() +
+                    ",\n Скорость ветра: " + wind + " " + storeUnits.getWindSpeed() +
+                    ",\n Давление: " + press + " " + storeUnits.getPressure();
+        } else {
+            message = "Weather in " + coordinates.getCityName() +
+                    ",\n Temperature: " + temp + " " + storeUnits.getTemperature() +
+                    ",\n Wind speed: " + wind + " " + storeUnits.getWindSpeed() +
+                    ",\n Pressure: " + press + " " + storeUnits.getPressure();
+        }
+
 
         log.info("parse returned " + message);
 

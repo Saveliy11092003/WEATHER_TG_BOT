@@ -19,7 +19,7 @@ import static java.lang.Math.round;
 @Slf4j
 public class ParserAdvancedWeather {
 
-    public String parse(StoreUnits storeUnits, UserRepository userRepository, Long chatId) throws IOException {
+    public String parse(StoreUnits storeUnits, UserRepository userRepository, Long chatId, boolean isRus) throws IOException {
         log.info("Went into the method parse");
         String city = null;
 
@@ -79,15 +79,30 @@ public class ParserAdvancedWeather {
             press = pressure;
         }
 
-        String message = "WEATHER IN " + coordinates.getCityName() +
-                ",\n Temperature: " + temp + " " + storeUnits.getTemperature() +
-                ",\n Feels like: " + temp_fl + " " + storeUnits.getTemperature() +
-                ",\n Wind speed: " + wind + " " + storeUnits.getWindSpeed() +
-                ",\n Pressure: " + press + " " + storeUnits.getPressure() +
-                ",\n Humidity: " + humidity + "% " +
-                ",\n Min temperature: " + t_min + " " + storeUnits.getTemperature() +
-                ",\n Max temperature: " + t_max + " " + storeUnits.getTemperature() +
-                ",\n Precipitation: " + precipitation;
+        String message;
+
+        if (isRus) {
+            message = "Погода в " + coordinates.getCityName() +
+                    ",\n Температура: " + temp + " " + storeUnits.getTemperature() +
+                    ",\n Чувствуется как: " + temp_fl + " " + storeUnits.getTemperature() +
+                    ",\n Скорость ветра: " + wind + " " + storeUnits.getWindSpeed() +
+                    ",\n Давление: " + press + " " + storeUnits.getPressure() +
+                    ",\n Влажность: " + humidity + "% " +
+                    ",\n Минимальная температура: " + t_min + " " + storeUnits.getTemperature() +
+                    ",\n Максимальна температура: " + t_max + " " + storeUnits.getTemperature() +
+                    ",\n Атмосферные осадки: " + precipitation;
+        } else {
+            message = "Weather in " + coordinates.getCityName() +
+                    ",\n Temperature: " + temp + " " + storeUnits.getTemperature() +
+                    ",\n Feels like: " + temp_fl + " " + storeUnits.getTemperature() +
+                    ",\n Wind speed: " + wind + " " + storeUnits.getWindSpeed() +
+                    ",\n Pressure: " + press + " " + storeUnits.getPressure() +
+                    ",\n Humidity: " + humidity + "% " +
+                    ",\n Min temperature: " + t_min + " " + storeUnits.getTemperature() +
+                    ",\n Max temperature: " + t_max + " " + storeUnits.getTemperature() +
+                    ",\n Precipitation: " + precipitation;
+        }
+
 
         log.info("parse returned "  + message);
 

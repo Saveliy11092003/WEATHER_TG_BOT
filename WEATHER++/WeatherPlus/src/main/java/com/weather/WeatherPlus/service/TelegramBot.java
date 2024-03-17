@@ -44,13 +44,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     private boolean waitCity;
     final BotConfig config;
     StoreUnits storeUnits;
-    private Translator translator;
+    private Translator translatorRu = new TranslatorRu();
+    private Translator translatorEn = new TranslatorEn();
+    private boolean isRus = true;
 
     CreaterMessage createrMessage;
-
-    private ReplyKeyboardMarkup menuKeyboard;
-    private ReplyKeyboardMarkup weatherKeyboard;
-    private ReplyKeyboardMarkup settingsKeyboard;
 
     public TelegramBot(BotConfig config) {
 
@@ -67,26 +65,9 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.error("Error setting bot's command list: " + e.getMessage());
         }
 
-        translator = new TranslatorRu();
-
-        setLanguage();
-
         createrMessage = new CreaterMessage();
     }
 
-    void setLanguage() {
-        MakerKeyboard makerKeyboard = new MakerKeyboardMenu(translator);
-        menuKeyboard = makerKeyboard.makeKeyboard();
-        log.info("Create MakerKeyboardMenu");
-
-        makerKeyboard = new MakerKeyboardWeather(translator);
-        weatherKeyboard = makerKeyboard.makeKeyboard();
-        log.info("Create MakerKeyboardWeather");
-
-        makerKeyboard = new MakerKeyboardSettings(translator);
-        settingsKeyboard = makerKeyboard.makeKeyboard();
-        log.info("Create MakerKeyboardSettings");
-    }
 
     @Override
     public String getBotUsername() {
@@ -108,7 +89,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.info("Received chatId (update.getMessage().getChatId())");
             long chatId = update.getMessage().getChatId();
 
-
+            System.out.println("1");
             switch (messageText) {
                 case "/start": {
 
@@ -116,7 +97,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     RegisterUser registerUser = new RegisterUser();
                     registerUser.registerUser(update.getMessage(), userRepository);
                     startCommandReceive(chatId, update.getMessage().getChat().getFirstName());
-                    SendMessage message = createrMessage.createMessage(chatId, "Enter the city: ");
+                    SendMessage message = createrMessage.createMessage(chatId, getCorrectStr("Enter the city: "));
                     doExecute(message);
 
                     waitCity = true;
@@ -126,8 +107,18 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "Помощь" :
                 case "Help": {
                     log.info("case HELP");
-                    translator = new TranslatorEn();
-                    sendMessage(chatId, HELP_TEXT, menuKeyboard);
+                    MakerKeyboard makerKeyboard;
+
+                    if (isRus) {
+                        makerKeyboard = new MakerKeyboardMenu(translatorRu);
+                    }else {
+                        makerKeyboard = new MakerKeyboardMenu(translatorEn);
+                    }
+
+                    ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
+
+                    sendMessage(chatId, getCorrectStr(HELP_TEXT), menuKeyboard);
+                    System.out.println("Помощь");
                     break;
                 }
 
@@ -194,7 +185,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "Изменить город" :
                 case "Change city": {
                     log.info("case CHANGE CITY");
-                    SendMessage message = createrMessage.createMessage(chatId, "Enter the city: ");
+                    SendMessage message = createrMessage.createMessage(chatId, getCorrectStr("Enter the city: "));
                     doExecute(message);
                     waitCity = true;
                     break;
@@ -214,6 +205,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 case "Рекомендация одежды" :
                 case "Cloth recommendations": {
+                    System.out.println("Cloth recomend");
                     log.info("case CLOTH RECOMMENDATION");
                     try {
                         recommendationCommandReceive(userRepository, chatId, storeUnits);
@@ -221,6 +213,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                         log.error("Error in case cloth recommendation:" + e.getMessage());
                         throw new RuntimeException(e);
                     }
+                    System.out.println("end");
                     break;
                 }
 
@@ -228,7 +221,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "RU EN": {
                     log.info("case change language");
                     try {
-                        changeLanguageReceive(chatId, translator);
+                        changeLanguageReceive(chatId);
                     } catch (IOException e) {
                         log.error("Error in case change language :" + e.getMessage());
                         throw new RuntimeException(e);
@@ -238,7 +231,17 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 default: {
                     log.info("COMMAND NOT FOUND");
-                    sendMessage(chatId, "Sorry, command was not recognized", menuKeyboard);
+
+                    MakerKeyboard makerKeyboard;
+                    if (isRus) {
+                        makerKeyboard = new MakerKeyboardMenu(translatorRu);
+                    }else {
+                        makerKeyboard = new MakerKeyboardMenu(translatorEn);
+                    }
+
+                    ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
+
+                    sendMessage(chatId, getCorrectStr("Sorry, command was not recognized"), menuKeyboard);
                 }
 
             }
@@ -249,7 +252,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.info("Received chat (update.getMessage().getChat())");
             var chat = update.getMessage().getChat();
             SendMessage message = createrMessage.createMessage(chatId,
-                    "You enter: " + update.getMessage().getText());
+                    getCorrectStr("You enter:") + " " + update.getMessage().getText());
             doExecute(message);
             String city = update.getMessage().getText();
             CityNameChecker cityNameChecker = new CityNameChecker();
@@ -282,7 +285,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
             if (callBackData.equals("BUTTON_C")) {
 
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed C", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed C"), messageId);
                 doExecute(message);
                 log.info("Set temperature - C");
                 storeUnits.setTemperature(TEMPERATURE.C);
@@ -296,7 +299,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
             } else if (callBackData.equals("BUTTON_K")) {
 
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed K", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed K"), messageId);
                 doExecute(message);
                 log.info("Set temperature - K");
                 storeUnits.setTemperature(TEMPERATURE.K);
@@ -309,7 +312,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
             } else if (callBackData.equals("KM_H_BUTTON")) {
 
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed km/h", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed km/h"), messageId);
                 doExecute(message);
                 log.info("Set wind speed - KH");
                 storeUnits.setWindSpeed(WIND_SPEED.KMH);
@@ -321,7 +324,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             } else if (callBackData.equals("MS_BUTTON")) {
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed m/s", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed m/s"), messageId);
                 doExecute(message);
                 log.info("Set wind speed - MS");
                 storeUnits.setWindSpeed(WIND_SPEED.MS);
@@ -333,13 +336,13 @@ public class TelegramBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
             } else if (callBackData.equals("MM_HG_BUTTON")) {
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed mmHG", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed mmHG"), messageId);
                 doExecute(message);
                 log.info("Set pressure - MMHG");
                 storeUnits.setPressure(PRESSURE.MMHG);
 
             } else if (callBackData.equals("H_PA_BUTTON")) {
-                EditMessageText message = createrMessage.createMessage(chatId, "You pressed mmHG", messageId);
+                EditMessageText message = createrMessage.createMessage(chatId, getCorrectStr("You pressed hpa"), messageId);
                 doExecute(message);
                 log.info("Set pressure - HPA");
                 storeUnits.setPressure(PRESSURE.HPA);
@@ -348,19 +351,28 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Exited the method onUpdateReceived");
     }
 
-    private void changeLanguageReceive(long chatId, Translator translator) throws IOException{
+    private String getCorrectStr(String s) {
+        return isRus ? translatorRu.translate(s) : translatorEn.translate(s);
+    }
+
+    private void changeLanguageReceive(long chatId) throws IOException{
         log.info("Went into the method changeLanguageReceive");
 
+        MakerKeyboard makerKeyboard;
         String answer;
-        if(translator instanceof TranslatorEn) {
-            translator = new TranslatorRu();
-            answer = translator.translate("Language is Russian");
+        if(isRus) {
+            isRus = false;
+            makerKeyboard = new MakerKeyboardMenu(translatorEn);
+            answer = "Language is English";
+            System.out.println(answer);
         } else {
-            translator = new TranslatorEn();
-            answer = translator.translate("Language is English");
+            isRus = true;
+            makerKeyboard = new MakerKeyboardMenu(translatorRu);
+            answer = "Русский язык";
+            System.out.println(answer);
         }
 
-        setLanguage();
+        ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, menuKeyboard);
 
         log.info("Exited the method changeLanguageReceive");
@@ -368,8 +380,21 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void recommendationCommandReceive(UserRepository userRepository, Long chatId, StoreUnits storeUnits) throws IOException {
         log.info("Went into the method recommendationCommandReceive");
-        GetterRecommendationWeather getterRecommendation = new GetterRecommendationWeather(userRepository, chatId, storeUnits);
+        GetterRecommendationWeather getterRecommendation = new GetterRecommendationWeather(userRepository, chatId, storeUnits, isRus);
         String answer = getterRecommendation.getRecommendation();
+
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardMenu(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardMenu(translatorEn);
+        }
+
+        System.out.println("3");
+        System.out.println(answer);
+
+        ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, menuKeyboard);
         log.info("Exited the method recommendationCommandReceive");
     }
@@ -377,28 +402,66 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void startCommandReceive(long chatId, String firstName) {
         log.info("Went into the method startCommandReceive");
         StartCommand startCommand = new StartCommand();
-        String answer = startCommand.getStartCommandReceive(firstName);
+        String answer = getCorrectStr(startCommand.getStartCommandReceive(firstName));
+
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardMenu(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardMenu(translatorEn);
+        }
+
+        ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, menuKeyboard);
         log.info("Exited the method startCommandReceive");
     }
 
     private void weatherCommandReceive(long chatId) throws IOException{
         log.info("Went into the method weatherCommandReceive");
-        String answer = "Weather";
+        String answer = getCorrectStr("Weather");
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardWeather(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardWeather(translatorEn);
+        }
+
+        ReplyKeyboardMarkup weatherKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, weatherKeyboard);
         log.info("Exited the method weatherCommandReceive");
     }
 
     private void settingsCommandReceive(long chatId) throws IOException{
         log.info("Went into the method settingsCommandReceive");
-        String answer = "Settings";
+        String answer = getCorrectStr("Settings");
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardSettings(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardSettings(translatorEn);
+        }
+
+        ReplyKeyboardMarkup settingsKeyboard = makerKeyboard.makeKeyboard();
+        System.out.println("settings");
         sendMessage(chatId, answer, settingsKeyboard);
         log.info("Exited the method settingsCommandReceive");
     }
 
     private void backCommandReceive(long chatId) throws IOException{
         log.info("Went into the method backCommandReceive");
-        String answer = "Back";
+        String answer = getCorrectStr("Back");
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardMenu(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardMenu(translatorEn);
+        }
+
+        ReplyKeyboardMarkup menuKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, menuKeyboard);
         log.info("Exited the method backCommandReceive");
     }
@@ -406,7 +469,17 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void weatherBaseCommandReceive(long chatId, StoreUnits storeUnits, UserRepository userRepository) throws IOException {
         log.info("Went into the method weatherBaseCommandReceive");
         GetterBaseWeather getterWeather = new GetterBaseWeather(storeUnits, userRepository, chatId);
-        String answer = getterWeather.getWeather();
+        String answer = getterWeather.getWeather(isRus);
+
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardWeather(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardWeather(translatorEn);
+        }
+
+        ReplyKeyboardMarkup weatherKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, weatherKeyboard);
         log.info("Exited the method weatherBaseCommandReceive");
     }
@@ -414,7 +487,16 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void weatherAdvancedCommandReceive(long chatId, StoreUnits storeUnits, UserRepository userRepository) throws IOException {
         log.info("Went into the method weatherAdvancedCommandReceive");
         GetterAdvancedWeather getterWeather = new GetterAdvancedWeather(storeUnits, userRepository, chatId);
-        String answer = getterWeather.getWeather();
+        String answer = getterWeather.getWeather(isRus);
+
+        MakerKeyboard makerKeyboard;
+        if (isRus) {
+            makerKeyboard = new MakerKeyboardWeather(translatorRu);
+        }else {
+            makerKeyboard = new MakerKeyboardWeather(translatorEn);
+        }
+
+        ReplyKeyboardMarkup weatherKeyboard = makerKeyboard.makeKeyboard();
         sendMessage(chatId, answer, weatherKeyboard);
         log.info("Exited the method weatherAdvancedCommandReceive");
     }
@@ -423,7 +505,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void changeTempCommandReceive(long chatId) throws IOException {
         log.info("Went into the method changeTempCommandReceive");
         CreaterTempBottom changerTemp = new CreaterTempBottom();
-        SendMessage message = changerTemp.createTemp(chatId);
+        SendMessage message = changerTemp.createTemp(chatId, isRus);
         doExecute(message);
         log.info("Exited the method changeTempCommandReceive");
     }
@@ -431,7 +513,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void changeWindCommandReceive(long chatId) throws IOException {
         log.info("Went into the method changeWindCommandReceive");
         CreaterWindBottom changerWind = new CreaterWindBottom();
-        SendMessage message = changerWind.createWind(chatId);
+        SendMessage message = changerWind.createWind(chatId, isRus);
         doExecute(message);
         log.info("Exited the method changeWindCommandReceive");
     }
@@ -439,7 +521,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void changePressureCommandReceive(long chatId) throws IOException {
         log.info("Went into the method changePressureCommandReceive");
         CreaterPresBottom changerPres = new CreaterPresBottom();
-        SendMessage message = changerPres.createPres(chatId);
+        SendMessage message = changerPres.createPres(chatId, isRus);
         doExecute(message);
         log.info("Exited the method changePressureCommandReceive");
     }

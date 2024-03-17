@@ -7,11 +7,21 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 
 @Slf4j
 public class CreaterPresBottom {
-    public SendMessage createPres(Long chatId){
+    public SendMessage createPres(Long chatId, boolean isRus){
         log.info("Went into the method createPres");
         CreaterMessage createrMessge = new CreaterMessage();
         log.info("Created SendMessage");
-        SendMessage message = createrMessge.createMessage(chatId, "Select speed wind");
+
+        String answer;
+
+        if (isRus) {
+            answer = "Выберите единицы измерения давления";
+        } else {
+            answer = "Select speed pressure:";
+        }
+
+
+        SendMessage message = createrMessge.createMessage(chatId, answer);
 
         MakeInlineKeyboardMarkup maker = new MakeInlineKeyboardMarkup();
         log.info("Created InlineKeyboardMarkup");

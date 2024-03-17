@@ -21,10 +21,10 @@ public class GetterAdvancedWeather {
         this.chatId = chatId;
     }
 
-    public String getWeather() throws IOException {
+    public String getWeather(boolean isRus) throws IOException {
         log.info("Went into the method getWeather");
         ParserAdvancedWeather parser = new ParserAdvancedWeather();
-        String message = parser.parse(storeUnits, userRepository, chatId);
+        String message = parser.parse(storeUnits, userRepository, chatId, isRus);
         log.info("getWeather returned string - " + message);
         log.info("Exited the method getWeather");
         return message;
